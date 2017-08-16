@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+
+import sys;
+import os;
+
+##
+# NB: Need to load the lib path to import custom modules.
+##
+sys.path.append(
+    os.path.join(
+        os.path.dirname(__file__),
+        '..',
+        'lib'
+    )
+);
+
+from typekit import Typekit;
+
+import output;
+import env;
+
+##
+# NB: These are all script arguments.
+##
+buildDir = sys.argv[1];
+cacheDir = sys.argv[2];
+envDir = sys.argv[3];
+
+##
+# NB: Ensure we have the required variables.
+##
+try:
+
+    env.load(
+        envDir,
+        [
+            'TYPEKIT_API_KEY',
+            'TYPEKIT_KIT_ID',
+            'HEROKU_APP_NAME'
+        ]
+    );
+
+    typeKitApiKey = os.environ['TYPEKIT_API_KEY'];
+    typeKitKitId = os.environ['TYPEKIT_KIT_ID'];
+    herokuAppName = os.environ['HEROKU_APP_NAME'];
+
+    if not typeKitApiKey or not typeKitKitId or not herokuAppName:
+        raise StandardError('One of more of the required variables is empty.');
+
+    herokuAppUrl = herokuAppName + '.herokuapp.com';
+
+    typekit = Typekit(
+        typeKitKitId,
+        typeKitApiKey
+    );
+
+    kit = typekit.kit();
+
+    if not kit:
+        raise RuntimeError('Unable to fetch kit.')
+
+    domains = kit['kit']['domains'];
+
+    if herokuAppUrl in domains:
+        print output.line('The domain "' + herokuAppUrl + '" has already been loaded into Typekit.');
+    else:
+        domains.append(herokuAppUrl);
+
+        if not typekit.add(domains):
+            raise RuntimeError('Unable to add domain to kit.');
+
+        typekit.publish();
+
+        print output.line('The domain "' + herokuAppUrl + '" has been added to your Typekit account.');
+        print output.line('Your new kit may take a few minutes to be completely distributed across the Typekie network.');
+
+except RuntimeError as e:
+
+    print output.line('Unable to process the kit with the ID "' + typeKitKitId + '".');
+    print output.line('Please double check your Kit ID and API Key.');
+    print output.nl();
+    print output.line('Internal error: ' + str(e));
+
+except StandardError:
+
+    print output.line('Please see the following URL for setup configuration settings:');
+    print output.line('https://github.com/jedkirby/heroku-buildpack-typekit');
