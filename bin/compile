@@ -72,7 +72,7 @@ try:
         typekit.publish();
 
         print output.line('The domain "' + herokuAppUrl + '" has been added to your Typekit account.');
-        print output.line('Your new kit may take a few minutes to be completely distributed across the Typekie network.');
+        print output.line('Your new kit may take a few minutes to be completely distributed across the Typekit network.');
 
 except RuntimeError as e:
 
