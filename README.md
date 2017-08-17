@@ -63,4 +63,4 @@ Once you've followed the above [Initial Setup](#initial-setup) and either one or
 
 You should see something similar to the following image within the build log for a successful whitelist of the domain to Typekit:
 
-![Heroku Typekit Domain Added](assets/heroku-typekit-domain-added.png?raw=true "Heroku Typekit Domain Added")
+![Heroku Typekit Domain Added](assets/heroku-typekit-domain-added-confirm.png?raw=true "Heroku Typekit Domain Added")
