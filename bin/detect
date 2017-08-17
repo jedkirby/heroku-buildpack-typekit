@@ -8,4 +8,4 @@ import sys;
 #
 #     This works fine as it should be a non-blocking script anyway.
 ##
-print 'Typekit configurator'; sys.exit(0);
+print 'Typekit'; sys.exit(0);
