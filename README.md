@@ -14,12 +14,12 @@ The entire process is non-blocking, so, if for some reason it doesn't work, your
 
 There are two **environment variables** which are required for all the types of updates that are possible, so these should be added to _all_ of your apps where you'd like to update the whitelisted domains automatically:
 
-- `TYPEKIT_KIT_ID` - This is the ID of the Typekit Kit you'd like to update the whitelisted domains of.
 - `TYPEKIT_API_KEY` - This is a unique Typekit API Key, and can be generated [on the account page](https://typekit.com/account/tokens).
+- `TYPEKIT_KIT_ID` - This is the ID of the Typekit Kit you'd like to update the whitelisted domains of.
 
 Once added, you should see something similar to the following:
 
-![Heroku Environment Settings](assets/heroku-env-settings.png?raw=true "Heroku Environment Settings")
+![Heroku Typekit Settings](assets/heroku-typekit-settings.png?raw=true "Heroku Typekit Settings")
 
 ## Setup: Review Apps
 
@@ -44,3 +44,15 @@ And the following to the `buildpacks` array, merging them with any existing prop
     ]
 }
 ```
+
+## Setup: Pipelines (Development, Staging & Production)
+
+Because the pipeline apps work differetly to review apps, it means we need to manually add a environment variable to each of the stages. You will only need to do this if you're wanting to use the `*.herokuapp.com` sub-domain as apposed to a custom domain - if you're using a custom domain, you should add it to Typekit manually.
+
+The following environment variable is required, and it should match the name that's been given to the pipeline stage:
+
+- `HEROKU_APP_NAME` - Name given to the pipeline stage.
+
+You should have something similar to the below image, where you can see the pipeline stage app name is `hdt-develop` and the value of the `HEROKU_APP_NAME` variable is also `hdt-develop`:
+
+![Heroku App Name](assets/heroku-app-name.png?raw=true "Heroku App Name")
