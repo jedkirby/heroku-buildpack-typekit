@@ -59,10 +59,8 @@ You should have something similar to the below image, where you can see the pipe
 
 ## Usage
 
-Once you've followed the above [Initial Setup](#initial-setup) and either one or both of the [Review App](#setup-review-app) / [Pipeline](setup-pipelines-development-staging--production) guides has been followed, you'll be good to either re-deploy an existing build, create a new review app, or push new code.
+Once you've followed the above [Initial Setup](#initial-setup) and either one or both of the [Review Apps](#setup-review-apps) / [Pipeline](#setup-pipelines-development-staging--production) guide(s) has been followed, you'll be good to either re-deploy an existing build, create a new review app, or push new code.
 
 You should see something similar to the following image within the build log for a successful whitelist of the domain to Typekit:
 
-...
-
-
+![Heroku Typekit Domain Added](assets/heroku-typekit-domain-added.png?raw=true "Heroku Typekit Domain Added")
