@@ -54,7 +54,7 @@ class Typekit():
             response = conn.getresponse();
             if response.status != 200:
                 return False;
-            else
+            else:
                 return json.loads(
                     response.read()
                 );
