@@ -56,3 +56,13 @@ The following environment variable is required, and it should match the name tha
 You should have something similar to the below image, where you can see the pipeline stage app name is `hdt-develop` and the value of the `HEROKU_APP_NAME` variable is also `hdt-develop`:
 
 ![Heroku App Name](assets/heroku-app-name.png?raw=true "Heroku App Name")
+
+## Usage
+
+Once you've followed the above [Initial Setup](#initial-setup) and either one or both of the [Review App](#setup-review-app) / [Pipeline](setup-pipelines-development-staging--production) guides has been followed, you'll be good to either re-deploy an existing build, create a new review app, or push new code.
+
+You should see something similar to the following image within the build log for a successful whitelist of the domain to Typekit:
+
+...
+
+
