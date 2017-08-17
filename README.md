@@ -47,11 +47,11 @@ And the following to the `buildpacks` array, merging them with any existing prop
 
 ## Setup: Pipelines (Development, Staging & Production)
 
-Because the pipeline apps work differetly to review apps, it means we need to manually add a environment variable to each of the stages. You will only need to do this if you're wanting to use the `*.herokuapp.com` sub-domain as apposed to a custom domain - if you're using a custom domain, you should add it to Typekit manually.
+Because the pipeline stage apps work differetly to review apps, it means we need to manually add a environment variable to each of the stage apps. You will only need to do this if you're wanting to use the `*.herokuapp.com` sub-domain as apposed to a custom domain - if you're using a custom domain, you should add it to Typekit manually.
 
-The following environment variable is required, and it should match the name that's been given to the pipeline stage:
+The following environment variable is required, and it should match the name that's been given to the pipeline stage app during creation:
 
-- `HEROKU_APP_NAME` - Name given to the pipeline stage.
+- `HEROKU_APP_NAME` - Name given to the pipeline stage app.
 
 You should have something similar to the below image, where you can see the pipeline stage app name is `hdt-develop` and the value of the `HEROKU_APP_NAME` variable is also `hdt-develop`:
 
