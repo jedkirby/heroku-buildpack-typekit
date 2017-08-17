@@ -64,3 +64,15 @@ Once you've followed the above [Initial Setup](#initial-setup) and either one or
 You should see something similar to the following image within the build log for a successful whitelist of the domain to Typekit:
 
 ![Heroku Typekit Domain Added](assets/heroku-typekit-domain-added-confirm.png?raw=true "Heroku Typekit Domain Added")
+
+## Development
+
+The following information only applies if you're forking and hacking on this buildpack for your own purposes.
+
+### Pull Requests
+
+Please submit all pull requests against develop as the base branch, and use either `feature` or `bugfix` branches.
+
+## License
+
+**jedkirby/heroku-buildpack-typekit** is licensed under the MIT license. See the [LICENSE](LICENSE) file for more details.
