@@ -12,6 +12,7 @@ Here's a log of all the changes that have happened to this package.
 - Docblocks for the entire Typekit class [James Kirby]
 - Added a changelog [James Kirby]
 - Added a license [James Kirby]
+- Added a readme file [James Kirby]
 
 #### Fix
 
