@@ -64,7 +64,6 @@ except RuntimeError as e:
 
     print output.line('Unable to process the kit with the ID "' + typeKitId + '".');
     print output.line('Please double check your Kit ID and API Key.');
-    print output.nl();
     print output.line('Internal error: "' + str(e) + '"');
 
 except:
