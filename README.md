@@ -23,12 +23,14 @@ Once added, you should see something similar to the following:
 
 ## Setup: Review Apps
 
-Then, to enable this process on Review Apps, you'll need to update the `app.json` file, which should be in the root of your project, to add the following Heroku-specific variable to the `env` list:
+Then, to enable this process on Review Apps, you'll need to update the `app.json` file, which should be in the root of your project, to add the following Heroku-specific and Typekit variables to the `env` list:
 
 ```json
 {
     "env": {
-        "HEROKU_APP_NAME": {"required": true}
+        "HEROKU_APP_NAME": {"required": true},
+        "TYPEKIT_API_KEY": {"required": true},
+        "TYPEKIT_KIT_ID": {"required": true}
     }
 }
 ```
