@@ -41,11 +41,13 @@ And the following to the `buildpacks` array, merging them with any existing prop
 {
     "buildpacks": [
         {
-            "url": "https://github.com/jedkirby/heroku-buildpack-typekit"
+            "url": "jedkirby/typekit"
         }
     ]
 }
 ```
+
+The `jedkirby/typekit` buildpack from the [Heroku Registry](https://devcenter.heroku.com/articles/buildpack-registry) represents the latest stable version of the buildpack. If you'd like to use the code from this Github repository, you can set your buildpack to the Github URL: `https://github.com/jedkirby/heroku-buildpack-typekit`.
 
 ## Setup: Pipelines (Development, Staging & Production)
 
